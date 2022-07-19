@@ -1,23 +1,11 @@
-let compraTotal = parseInt(prompt("Ingrese importe Total de la compra"));
-let cuotas = 0;
-
-while (cuotas != 3 && cuotas != 6 && cuotas != 12) {
-  cuotas = parseInt(prompt("Ingrese cantidad de cuotas (3,6 o 12)."));
-
-  if (cuotas != 3 && cuotas != 6 && cuotas != 12) {
-    alert("ERROR: ingrese cuotas: 3, 6 o 12");
-  } else {
-    alert("ingresó " + " " + cuotas + " " + "cuotas");
+function computeLoan(){
+  
+  const amount = document.querySelector('#amount').value;
+  const interest_rate = document.querySelector('#interest_rate').value;
+  const months = document.querySelector('#months').value;
+  const interest = (amount * (interest_rate * 0.50)) / months;
+  
+  let payment = ((amount / months) + interest).toFixed(2); 
+  payment = payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); 
+  document.querySelector('#payment').innerHTML = `Pago Mensual = ${payment}`
   }
-}
-
-let calculoCuotas = 0;
-
-function calculo(compraTotal, cuotas) {
-  let calculoCuotas = compraTotal / cuotas;
-  return calculoCuotas;
-}
-
-let resultado = calculo(compraTotal, cuotas);
-console.log(resultado);
-alert(`${cuotas} cuotas de ${resultado}`);
