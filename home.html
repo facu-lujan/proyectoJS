@@ -9,21 +9,13 @@
 </head>
 <body>
 
-   <h1>Calculadora de Prestamo</h1>
-
-   <div class="input">
-
-    <p>Cantidad de dinero: $</p>
-     <input id="amount" type="number" min="1" max="5000000" onchange="computeLoan()">
-    <p>Interes: %</p>
-     <input id="interest_rate" min="0" max="100" value="10" step=".1" onchange="computeLoan()">
-    <p>Meses a pagar: </p>
-     <input id="months" type="number" min="1" max="300" value="1" step="1" onchange="computeLoan()">
-   
-   </div>
-
-   <h2 id="payment"></h2>
-
+<h1>Calcular mayor, menor y media con Arrays</h1>
+<p id="parrafo">Introduce los enteros separados por comas</p>
+<input type="text" id="text"></input>
+<br><br><input type="button" value="calcular" onclick="calcular()"></input>
+<input type="button" value="Reiniciar" onclick="Reiniciar()">
+<p id="array"></p>
+<p id="resultado"></p>
 
 </body>
 </html>
